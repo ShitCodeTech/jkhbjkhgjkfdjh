@@ -9,6 +9,8 @@ from termcolor import colored, cprint
 
 from better_proxy import Proxy
 
+from random import shuffle
+
 from core import Grass
 from core.autoreger import AutoReger
 from core.utils import logger, file_to_list
@@ -19,18 +21,13 @@ from data.config import ACCOUNTS_FILE_PATH, PROXIES_FILE_PATH, REGISTER_ACCOUNT_
 
 
 def bot_info(name: str = ""):
-    cprint(text2art(name), 'green')
+    cprint(text2art(name), 'yellow')
 
     if sys.platform == 'win32':
         ctypes.windll.kernel32.SetConsoleTitleW(f"{name}")
 
     print(
-        f"{colored('EnJoYeR <crypto/> moves:', color='light_yellow')} "
-        f"{colored('https://t.me/+tdC-PXRzhnczNDli', color='light_green')}"
-    )
-    print(
-        f"{colored('Donate here:', color='light_yellow')} "
-        f"{colored('0x000007c73a94f8582ef95396918dcd04f806cdd8', color='light_green')}"
+        f"{colored('Think diferent', color='red')} "
     )
 
 
@@ -75,6 +72,11 @@ async def main():
     accounts = file_to_list(ACCOUNTS_FILE_PATH)
     proxies = [Proxy.from_str(proxy).as_url for proxy in file_to_list(PROXIES_FILE_PATH)]
 
+    
+
+    shuffle(proxies)
+
+
     db = AccountsDB('data/proxies_stats.db')
     await db.connect()
 
@@ -111,7 +113,7 @@ async def main():
 
 
 if __name__ == "__main__":
-    bot_info("WMS-Crypto")
+    bot_info("WMCrypto")
 
     if sys.platform == 'win32':
         asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())

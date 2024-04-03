@@ -1,2 +1,8 @@
 python main.py
-pause
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py

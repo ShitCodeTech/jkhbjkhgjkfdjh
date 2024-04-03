@@ -20,7 +20,7 @@ class BaseClient:
             'content-type': 'application/json',
             'origin': 'https://app.getgrass.io',
             'referer': 'https://app.getgrass.io/',
-            'sec-ch-ua': '"Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"',
+            'sec-ch-ua': '"Not_A Brand";v="8", "Chromium";v="122", "Google Chrome";v="122"',
             'sec-ch-ua-mobile': '?0',
             'sec-ch-ua-platform': '"Windows"',
             'sec-fetch-dest': 'empty',
